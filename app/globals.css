@@ -1,0 +1,47 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg:             #000000;
+  --color-surface:        #1A1A1A;
+  --color-surface-alt:    #141414;
+  --color-surface-edge:   #0a0a0a;
+  --color-accent:         #C8FF00;
+  --color-accent-dark:    #A8D900;
+  --color-accent-on:      #000000;
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #AAAAAA;
+  --color-text-muted:     #555555;
+  --color-border:         #1f1f1f;
+  --color-border-strong:  #2a2a2a;
+
+  --font-ko: 'Pretendard Variable', 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-en: 'DM Mono', 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-ko);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+textarea { resize: none; outline: none; }
+
+select { appearance: none; -webkit-appearance: none; }
