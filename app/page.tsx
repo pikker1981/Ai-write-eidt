@@ -141,17 +141,17 @@ export default function Home() {
   // ────────────────────────────────────────────────────────────────────────────
   return (
     // 검정 전체 배경 + 중앙 컨테이너
-    <div style={{ minHeight: "100vh", background: "#000", padding: "32px 16px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <div style={{ width: "100%", maxWidth: "1280px", border: "1px solid #1f1f1f", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+    <div className="outer-wrap" style={{ minHeight: "100vh", background: "#000", padding: "32px 16px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div className="app-shell" style={{ width: "100%", maxWidth: "1280px", border: "1px solid #1f1f1f", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
 
         {/* ── Header ── */}
-        <header style={{ background: "#000", borderBottom: "1px solid #1f1f1f", padding: "18px 28px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <header className="app-header" style={{ background: "#000", borderBottom: "1px solid #1f1f1f", padding: "18px 28px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div>
             <span style={{ ...S.label, borderBottom: "2px solid #C8FF00", paddingBottom: "5px", color: "#AAAAAA" }}>
               IM-NOT-AI
             </span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <div className="header-right" style={{ display: "flex", alignItems: "center", gap: "20px" }}>
             <span style={{ ...S.label }}>23 카테고리 · 150+ 패턴</span>
             <span style={{ ...S.label }}>@im-not-ai</span>
             <a href="https://github.com/epoko77-ai/im-not-ai" target="_blank" rel="noopener noreferrer"
@@ -164,13 +164,13 @@ export default function Home() {
         </header>
 
         {/* ── Main 2-col ── */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "72vh" }}>
+        <div className="main-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "72vh" }}>
 
           {/* ── LEFT: Input ── */}
-          <div style={{ display: "flex", flexDirection: "column", borderRight: "1px solid #1f1f1f" }}>
+          <div className="left-panel" style={{ display: "flex", flexDirection: "column", borderRight: "1px solid #1f1f1f" }}>
 
             {/* Options bar */}
-            <div style={{ background: "#0a0a0a", borderBottom: "1px solid #1f1f1f", padding: "10px 20px", display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <div className="options-bar" style={{ background: "#0a0a0a", borderBottom: "1px solid #1f1f1f", padding: "10px 20px", display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
               <span style={S.label}>장르</span>
               <select value={genre} onChange={e => setGenre(e.target.value)}
                 style={{ ...S.mono, fontSize: "11px", background: "#1A1A1A", color: "#AAAAAA", border: "1px solid #2a2a2a", borderRadius: "4px", padding: "4px 8px", cursor: "pointer" }}>
@@ -208,7 +208,7 @@ export default function Home() {
             </div>
 
             {/* Run button */}
-            <div style={{ background: "#0a0a0a", borderTop: "1px solid #1f1f1f", padding: "14px 20px" }}>
+            <div className="run-btn-wrap" style={{ background: "#0a0a0a", borderTop: "1px solid #1f1f1f", padding: "14px 20px" }}>
               <button onClick={handleSubmit} style={{ width: "100%", padding: "13px 20px", borderRadius: "8px", fontSize: "14px", fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", transition: "all 0.15s", background: canRun ? "#C8FF00" : "#111", color: canRun ? "#000" : "#444", border: canRun ? "none" : "1px solid #1f1f1f", cursor: canRun ? "pointer" : isLoading ? "wait" : "not-allowed", letterSpacing: "-0.01em" }}>
                 {isLoading ? <><Spinner /><span style={S.mono}>탐지 중...</span></> : <>
                   <svg style={{ width: 16, height: 16 }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -224,7 +224,7 @@ export default function Home() {
           <div style={{ display: "flex", flexDirection: "column" }}>
 
             {/* Tab bar */}
-            <div style={{ background: "#0a0a0a", borderBottom: "1px solid #1f1f1f", padding: "0 20px", display: "flex", alignItems: "center", gap: "0" }}>
+            <div className="tab-bar" style={{ background: "#0a0a0a", borderBottom: "1px solid #1f1f1f", padding: "0 20px", display: "flex", alignItems: "center", gap: "0" }}>
               {([
                 { key: "output",     label: "윤문본" },
                 { key: "detections", label: `탐지 리포트${result ? ` (${result.detections.length})` : ""}` },
@@ -287,9 +287,9 @@ export default function Home() {
 
               {/* ── OUTPUT TAB ── */}
               {result && activeTab === "output" && (
-                <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                <div className="output-area" style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: "12px" }}>
                   {/* Stats 4-grid */}
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "8px" }}>
+                  <div className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "8px" }}>
                     {[
                       { label: "S1 결정적", value: result.stats.s1_count, accent: result.stats.s1_count > 0 },
                       { label: "S2 강함",   value: result.stats.s2_count, accent: false },
@@ -372,8 +372,8 @@ export default function Home() {
         </div>
 
         {/* ── Footer ── */}
-        <footer style={{ background: "#000", borderTop: "1px solid #1f1f1f", padding: "12px 28px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={S.label}>im-not-ai v2.0 · 23개 카테고리 × 150+ 패턴 · 국립국어원 기준 · 로컬 엔진</span>
+        <footer className="footer-row" style={{ background: "#000", borderTop: "1px solid #1f1f1f", padding: "12px 28px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span className="footer-full" style={S.label}>im-not-ai v2.0 · 23개 카테고리 × 150+ 패턴 · 국립국어원 기준 · 로컬 엔진</span>
           <span style={S.label}>@im-not-ai</span>
         </footer>
       </div>
