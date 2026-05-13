@@ -152,7 +152,7 @@ export default function Home() {
             </span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-            <span style={{ ...S.label }}>10 카테고리 · 80+ 패턴</span>
+            <span style={{ ...S.label }}>23 카테고리 · 150+ 패턴</span>
             <span style={{ ...S.label }}>@im-not-ai</span>
             <a href="https://github.com/epoko77-ai/im-not-ai" target="_blank" rel="noopener noreferrer"
               style={{ ...S.label, color: "#555", textDecoration: "none", transition: "color 0.15s" }}
@@ -276,7 +276,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <p style={{ fontSize: "16px", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>AI 글을 붙여넣고 실행하세요</p>
-                  <p style={{ fontSize: "13px", color: "#555", marginBottom: "28px" }}>10대 카테고리 · 80+ 패턴 · 국립국어원 기준</p>
+                  <p style={{ fontSize: "13px", color: "#555", marginBottom: "28px" }}>23개 카테고리 · 150+ 패턴 · 국립국어원 기준</p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", width: "100%", maxWidth: "260px" }}>
                     {["번역투/이중피동", "AI 관용구", "명사+동사 축약", "풀어쓰기 교정", "군더더기 제거", "문장 종결 개선"].map(p => (
                       <div key={p} style={{ ...S.lcard(), padding: "8px 12px", fontSize: "12px", color: "#AAAAAA" }}>{p}</div>
@@ -373,7 +373,7 @@ export default function Home() {
 
         {/* ── Footer ── */}
         <footer style={{ background: "#000", borderTop: "1px solid #1f1f1f", padding: "12px 28px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={S.label}>im-not-ai v2.0 · 10대 카테고리 × 80+ 패턴 · 국립국어원 기준 · 로컬 엔진</span>
+          <span style={S.label}>im-not-ai v2.0 · 23개 카테고리 × 150+ 패턴 · 국립국어원 기준 · 로컬 엔진</span>
           <span style={S.label}>@im-not-ai</span>
         </footer>
       </div>

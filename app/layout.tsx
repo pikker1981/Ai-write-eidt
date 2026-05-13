@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "im-not-ai — 한글 AI 티 제거기",
     description:
-      "번역투·관용구·기계적 병렬 등 40+ AI 패턴을 탐지하고 자연스러운 한국어로 윤문합니다.",
+      "번역투·관용구·기계적 병렬 등 150+ 패턴을 탐지하고 자연스러운 한국어로 윤문합니다.",
     type: "website",
   },
 };
